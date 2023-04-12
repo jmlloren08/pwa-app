@@ -11,10 +11,17 @@
 
         <form method="POST" action="edit.php">
             <div class="form-group">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text">
+                  <label for="txtdataid">Firstname</label>
+                  </span>
+                </div>
+              </div>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <span class="input-group-text">
-                    <i class="fas fa-user fa-fw"></i>
+                    <i class="fas fa-user-alt"></i>
                   </span>
                 </div>
                 <input type="text" class="form-control" id="txtdataid" name="txtdataid" aria-describedby="inputGroupPrepend" required>
