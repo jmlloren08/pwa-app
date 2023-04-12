@@ -12,7 +12,7 @@
     $user = $_POST['user'];
     $pass = $_POST['pass'];
   
-    $sql = "SELECT * FROM tblusers WHERE user = '$user' AND pass = '$pass'";
+    $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
     $result = mysqli_query($conn, $sql);
   
     if (mysqli_num_rows($result) > 0) {
@@ -25,8 +25,6 @@
   }
   
   mysqli_close($conn);
-
-  $msg = "ndy";
 
 ?>
 
@@ -120,7 +118,7 @@
             <div class="text-center mb-3">
               <p class="m-0">Don't have an account? <a href="register.php"> Register</a>.</p>
             </div>
-          </form>>
+          </form>
 
           <?php echo isset($error) ? $error : ""; ?>
 
@@ -131,39 +129,13 @@
 
 </div>
 
-<script>
-  const modal = document.querySelector('#staticBackdrop');
-  const closeButton = document.querySelector('.modal-close');
-  closeButton.addEventListener('show.bs.modal', event => {
-    modal.classList.remove('is-active');
-    });
-  if (<?php echo isset($error) ? 'true' : 'false'; ?>) {
-    modal.classList.add('is-active');
-  }
-</script>
-
-<script>
-  (() => {
-  'use strict'
-  const forms = document.querySelectorAll('.needs-validation')
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
-</script>
-
+<script src="build/js/custom/FormValidation.js"></script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
 <script src="plugins/jquery-validation/additional-methods.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
-<script src="build/js/app.js"></script>
+<script src="build/js/custom/app.js"></script>
 
 </body>
 </html>

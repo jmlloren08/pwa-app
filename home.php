@@ -108,7 +108,7 @@ $user = $_SESSION['user'];
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
+
     <a href="#" class="brand-link">
       <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Department_of_the_Interior_and_Local_Government_%28DILG%29_Seal_-_Logo.svg" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">DILG RO IX</span>
@@ -120,8 +120,6 @@ $user = $_SESSION['user'];
       <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -258,7 +256,7 @@ $user = $_SESSION['user'];
                   <tbody>
                   <?php
                       include_once('conn.php');
-                      $sql = $sql = "SELECT *, TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS age FROM mytable";
+                      $sql = "SELECT *, TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS age FROM mytable";
                       $result = mysqli_query($conn, $sql);
                     ?>
                     <?php while($row = mysqli_fetch_assoc($result)){?>
@@ -271,14 +269,14 @@ $user = $_SESSION['user'];
                       $name = $fname . " " . $lname;
                     ?>
                     <td><?php echo $name; ?></td>
-                    <td><?php echo $row['email']; ?></td>
+                    <td ><?php echo $row['email']; ?></td>
                     <td><?php echo $row['address']; ?></td>
                     <td><?php echo $row['birthdate']; ?></td>
                     <td><?php echo $row['age']; ?></td>
                     <td>
                     <div class="input-group-append"></div>
                     <?php include('modal.php'); ?>
-                    <a href="#" title="Edit" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas fa-edit" alt="Edit"></i></a>
+                    <a href="#" title="Edit" id="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" data-id="<?php echo $row['id']; ?>"><i class="fas fa-edit" alt="Edit"></i></a>
                     <a href="delete.php" title="Delete"><i class="fas fa-trash" alt="Delete"></i></a>
                     </td>
                   </tr>
@@ -341,45 +339,9 @@ $user = $_SESSION['user'];
 <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
-<script src="build/js/app.js"></script>
+<script src="build/js/custom/app.js"></script>
+<script src="build/js/custom/datatables.js"></script>
+<script src="build/js/custom/getID.js"></script>
 
-<script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-      "responsive": true,
-    });
-  });
-</script>
-
-<script>
-  const exampleModal = document.getElementById('exampleModal')
-  if (exampleModal) {
-    exampleModal.addEventListener('show.bs.modal', event => {
-      // Button that triggered the modal
-      const button = event.relatedTarget
-      // Extract info from data-bs-* attributes
-      const recipient = button.getAttribute('data-bs-whatever')
-      // If necessary, you could initiate an Ajax request here
-      // and then do the updating in a callback.
-
-      // Update the modal's content.
-      const modalTitle = exampleModal.querySelector('.modal-title')
-      const modalBodyInput = exampleModal.querySelector('.modal-body input')
-
-      modalTitle.textContent = `New message to ${recipient}`
-      modalBodyInput.value = recipient
-    })
-  }
-</script>
 </body>
 </html>
