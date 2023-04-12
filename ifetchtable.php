@@ -3,8 +3,8 @@
 
     $dataload = array('error'=> false);
 
-    $idd = $_POST['id'];
-    $sql = "SELECT * FROM mytable WHERE id='$idd'";
+    $id = $_POST['id'];
+    $sql = "SELECT * FROM mytable WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     $dataload['data'] = mysqli_fetch_assoc($result);
 

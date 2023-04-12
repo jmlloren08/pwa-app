@@ -274,10 +274,10 @@ $user = $_SESSION['user'];
                     <td><?php echo $row['birthdate']; ?></td>
                     <td><?php echo $row['age']; ?></td>
                     <td>
-                    <div class="input-group-append"></div>
-                    <?php include('modal.php'); ?>
-                    <a href="#" title="Edit" id="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModalCenter" data-id="<?php echo $row['id']; ?>"><i class="fas fa-edit" alt="Edit"></i></a>
-                    <a href="delete.php" title="Delete"><i class="fas fa-trash" alt="Delete"></i></a>
+                    <div class="input-group-append">
+                    <a href="#" title="Edit" id="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $row['id']; ?>"><i class="fas fa-edit" alt="Edit"></i> </a> 
+                    <a href="#" title="Delete" id="btndelete" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-id="<?php echo $row['id']; ?>"><i class="fas fa-trash" alt="Delete"></i></a>
+                    </div>
                     </td>
                   </tr>
                   <?php }?>
@@ -307,6 +307,133 @@ $user = $_SESSION['user'];
     </section>
     <!-- /.content -->
   </div>
+
+  <!-- show modal if edit-->
+  
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update record</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Firstname:</span>
+              </div>
+              <input type="text" class="form-control" id="first_name" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Lastname:</span>
+            </div>
+              <input type="text" class="form-control" id="last_name" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Email:</span>
+            </div>
+              <input type="text" class="form-control" id="email" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Address:</span>
+            </div>
+              <input type="text" class="form-control" id="address" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Birthdate:</span>
+            </div>
+              <input type="text" class="form-control" id="birthdate" aria-describedby="inputGroup-sizing-sm" required>
+            </div>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- show modal if delete -->
+
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete this record?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Firstname:</span>
+              </div>
+              <input type="text" class="form-control" id="first_name" value="first_name" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Lastname:</span>
+            </div>
+              <input type="text" class="form-control" id="last_name" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Email:</span>
+            </div>
+              <input type="text" class="form-control" id="email" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Address:</span>
+            </div>
+              <input type="text" class="form-control" id="address" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+            </div>
+          </div>
+          <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-sm">Birthdate:</span>
+            </div>
+              <input type="text" class="form-control" id="birthdate" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+            </div>
+          </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <footer class="main-footer">
     <strong>Copyright &copy; 2023 <a href="#">DILG RO IX</a>.</strong>
@@ -344,4 +471,5 @@ $user = $_SESSION['user'];
 <script src="build/js/custom/getID.js"></script>
 
 </body>
+
 </html>

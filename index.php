@@ -12,7 +12,7 @@
     $user = $_POST['user'];
     $pass = $_POST['pass'];
   
-    $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
+    $sql = "SELECT * FROM tblusers WHERE user = '$user' AND pass = '$pass'";
     $result = mysqli_query($conn, $sql);
   
     if (mysqli_num_rows($result) > 0) {
@@ -86,7 +86,7 @@
                     <i class="fas fa-user fa-fw"></i>
                   </span>
                 </div>
-                <input type="text" class="form-control" id="validationCustomUsername" name="user" aria-describedby="inputGroupPrepend" placeholder="Username" required>
+                <input type="text" class="form-control" name="user" aria-describedby="inputGroupPrepend" placeholder="Username" required>
               </div>
             </div>
             <div class="form-group">
@@ -96,7 +96,7 @@
                     <i class="fas fa-lock fa-fw"></i>
                   </span>
                 </div>
-                <input type="password" class="form-control" id="validationCustomPassword" name="pass" aria-describedby="inputGroupPrepend" placeholder="Password" required>
+                <input type="password" class="form-control" name="pass" aria-describedby="inputGroupPrepend" placeholder="Password" required>
               </div>
             </div>
             <div class="row">
