@@ -36,11 +36,11 @@ $(document).ready(function(){
           data: {id:recs},
           dataType: 'JSON',
           success:function(records){
-            $('#first_name').val(records.data.first_name);
-            $('#last_name').val(records.data.last_name);
-            $('#email').val(records.data.email);
-            $('#address').val(records.data.address);
-            $('#birthdate').val(records.data.birthdate);
+            $('#first_name2').val(records.data.first_name);
+            $('#last_name2').val(records.data.last_name);
+            $('#email2').val(records.data.email);
+            $('#address2').val(records.data.address);
+            $('#birthdate2').val(records.data.birthdate);
           }
         });
       }

@@ -1,0 +1,8 @@
+{
+    "name": "sonicmaster/pwa-app",
+    "description": "pwa-app-development",
+    "type": "project",
+    "license": "pwa",
+    "minimum-stability": "dev",
+    "require": {}
+}
