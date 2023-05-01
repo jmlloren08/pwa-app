@@ -4,5 +4,7 @@
     "type": "project",
     "license": "pwa",
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "google/cloud-firestore": "^0.1.0"
+    }
 }
