@@ -28,7 +28,7 @@ $(document).ready(function(){
         var id = $(this).data("id");
         GetDetails(id);
       })
-    
+        
     function GetDetails(recs){
         $.ajax({
           method: 'POST',
