@@ -5,6 +5,7 @@
     "license": "pwa",
     "minimum-stability": "dev",
     "require": {
-        "google/cloud-firestore": "^0.1.0"
+        "google/cloud-firestore": "^0.1.0",
+        "google/cloud-storage": "^1.30"
     }
 }
