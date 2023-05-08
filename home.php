@@ -275,8 +275,8 @@ $user = $_SESSION['user'];
                     <td><?php echo $row['age']; ?></td>
                     <td>
                     <div class="input-group-append">
-                    <a href="#" title="Edit" id="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $row['id']; ?>"><i class="fas fa-edit" alt="Edit"></i> </a> 
-                    <a href="#" title="Delete" id="btndelete" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-id="<?php echo $row['id']; ?>"><i class="fas fa-trash" alt="Delete"></i></a>
+                    <a href="#" class="tooltip-test" title="Update?" id="btnedit" data-bs-toggle="modal" data-bs-target="#exampleModal" data-id="<?php echo $row['id']; ?>"><i class="fas fa-edit"></i></a>
+                    <a href="#" class="tooltip-test" title="Delete?" id="btndelete" data-bs-toggle="modal" data-bs-target="#exampleModal2" data-id="<?php echo $row['id']; ?>"><i class="fas fa-trash"></i></a>
                     </div>
                     </td>
                   </tr>
@@ -365,7 +365,7 @@ $user = $_SESSION['user'];
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <div class="form-group">
-        <button type="submit" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary" data-bs-submit="btnSaveChanges">Save changes</button>
         </div>
       </div>
     </div>
@@ -388,7 +388,7 @@ $user = $_SESSION['user'];
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Firstname:</span>
               </div>
-              <input type="text" class="form-control" id="first_name" value="first_name" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+              <input type="text" class="form-control" id="first_name2" aria-describedby="inputGroup-sizing-sm" readonly>
             </div>
           </div>
           <div class="form-group">
@@ -396,7 +396,7 @@ $user = $_SESSION['user'];
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-sm">Lastname:</span>
             </div>
-              <input type="text" class="form-control" id="last_name" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+              <input type="text" class="form-control" id="last_name2" aria-describedby="inputGroup-sizing-sm" readonly>
             </div>
           </div>
           <div class="form-group">
@@ -404,7 +404,7 @@ $user = $_SESSION['user'];
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-sm">Email:</span>
             </div>
-              <input type="text" class="form-control" id="email" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+              <input type="text" class="form-control" id="email2" aria-describedby="inputGroup-sizing-sm" readonly>
             </div>
           </div>
           <div class="form-group">
@@ -412,7 +412,7 @@ $user = $_SESSION['user'];
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-sm">Address:</span>
             </div>
-              <input type="text" class="form-control" id="address" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+              <input type="text" class="form-control" id="address2" aria-describedby="inputGroup-sizing-sm" readonly>
             </div>
           </div>
           <div class="form-group">
@@ -420,7 +420,7 @@ $user = $_SESSION['user'];
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-sm">Birthdate:</span>
             </div>
-              <input type="text" class="form-control" id="birthdate" aria-describedby="inputGroup-sizing-sm" disabled readonly>
+              <input type="text" class="form-control" id="birthdate2" aria-describedby="inputGroup-sizing-sm" readonly>
             </div>
           </div>
 
@@ -468,7 +468,7 @@ $user = $_SESSION['user'];
 <script src="dist/js/adminlte.min.js"></script>
 <script src="build/js/custom/app.js"></script>
 <script src="build/js/custom/datatables.js"></script>
-
+<script src="build/js/custom/getID.js"></script>
 
 </body>
 
