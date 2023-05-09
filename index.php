@@ -130,6 +130,10 @@ use GPBMetadata\Google\Privacy\Dlp\V2Beta1\Storage;
 
 </div>
 
+<?php
+  include('storage.php');
+?>
+
 <script src="build/js/custom/FormValidation.js"></script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
