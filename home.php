@@ -325,7 +325,7 @@ $user = $_SESSION['user'];
               <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-sm">Firstname:</span>
               </div>
-              <input type="text" class="form-control" id="first_name" aria-describedby="inputGroup-sizing-sm" required>
+              <input type="text" class="form-control" id="first_name" name="first_name" aria-describedby="inputGroup-sizing-sm" required>
             </div>
           </div>
           <div class="form-group">
@@ -450,7 +450,7 @@ $user = $_SESSION['user'];
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
+<script src="build/js/custom/getID.js"></script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="plugins/datatables/jquery.dataTables.min.js"></script>
@@ -469,7 +469,6 @@ $user = $_SESSION['user'];
 <script src="build/js/custom/app.js"></script>
 <script src="build/js/custom/datatables.js"></script>
 <script src="build/js/custom/getID.js"></script>
-<script src="build/js/custom/updateID.js"></script>
 
 </body>
 

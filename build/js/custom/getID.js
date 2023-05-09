@@ -20,9 +20,9 @@ $(document).ready(function(){
           }
         });
       }
-  })
+})
 
-  $(document).ready(function(){
+$(document).ready(function(){
  
     $(document).on("click","#btndelete",function(){
         var id = $(this).data("id");
@@ -44,4 +44,4 @@ $(document).ready(function(){
           }
         });
       }
-  })
+})
