@@ -26,8 +26,8 @@ return array(
     'Google\\Cloud\\Core\\' => array($vendorDir . '/google/cloud-core/src'),
     'Google\\CRC32\\' => array($vendorDir . '/google/crc32/src'),
     'Google\\Auth\\' => array($vendorDir . '/google/auth/src'),
-    'Google\\' => array($vendorDir . '/google/proto-client/src/Google', $vendorDir . '/google/gax/src/generated/Google'),
+    'Google\\' => array($vendorDir . '/google/gax/src/generated/Google', $vendorDir . '/google/proto-client/src/Google'),
     'GPBMetadata\\Google\\Protobuf\\' => array($vendorDir . '/google/protobuf/src/GPBMetadata/Google/Protobuf'),
-    'GPBMetadata\\' => array($vendorDir . '/google/proto-client/src/GPBMetadata', $vendorDir . '/google/gax/src/generated/GPBMetadata'),
+    'GPBMetadata\\' => array($vendorDir . '/google/gax/src/generated/GPBMetadata', $vendorDir . '/google/proto-client/src/GPBMetadata'),
     'Firebase\\JWT\\' => array($vendorDir . '/firebase/php-jwt/src'),
 );

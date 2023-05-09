@@ -144,8 +144,8 @@ class ComposerStaticInit4538f13171bb27fa95d803d974bdeaae
         ),
         'Google\\' => 
         array (
-            0 => __DIR__ . '/..' . '/google/proto-client/src/Google',
-            1 => __DIR__ . '/..' . '/google/gax/src/generated/Google',
+            0 => __DIR__ . '/..' . '/google/gax/src/generated/Google',
+            1 => __DIR__ . '/..' . '/google/proto-client/src/Google',
         ),
         'GPBMetadata\\Google\\Protobuf\\' => 
         array (
@@ -153,8 +153,8 @@ class ComposerStaticInit4538f13171bb27fa95d803d974bdeaae
         ),
         'GPBMetadata\\' => 
         array (
-            0 => __DIR__ . '/..' . '/google/proto-client/src/GPBMetadata',
-            1 => __DIR__ . '/..' . '/google/gax/src/generated/GPBMetadata',
+            0 => __DIR__ . '/..' . '/google/gax/src/generated/GPBMetadata',
+            1 => __DIR__ . '/..' . '/google/proto-client/src/GPBMetadata',
         ),
         'Firebase\\JWT\\' => 
         array (
