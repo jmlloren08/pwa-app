@@ -32,7 +32,7 @@ $(document).ready(function(){
     function GetDetails(recs){
         $.ajax({
           method: 'POST',
-          url: 'ifetchtable.php',
+          url: '../../pages/tables/ifetchtable.php',
           data: {id:recs},
           dataType: 'JSON',
           success:function(records){
