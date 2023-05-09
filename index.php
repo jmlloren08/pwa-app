@@ -8,7 +8,7 @@ use GPBMetadata\Google\Privacy\Dlp\V2Beta1\Storage;
     exit;
   }
 
-  include_once('conn.php');
+  // include_once('conn.php');
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user = $_POST['user'];
     $pass = $_POST['pass'];
@@ -25,7 +25,7 @@ use GPBMetadata\Google\Privacy\Dlp\V2Beta1\Storage;
     }
   }
   
-  mysqli_close($conn);
+  // mysqli_close($conn);
 
 ?>
 
