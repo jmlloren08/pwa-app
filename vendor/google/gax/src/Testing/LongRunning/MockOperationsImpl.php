@@ -51,8 +51,3 @@ use Google\Protobuf\GPBEmpty;
 use Grpc;
 use PHPUnit_Framework_TestCase;
 use stdClass;
-
-class MockOperationsImpl extends OperationsGrpcClient
-{
-    use MockStubTrait;
-}
