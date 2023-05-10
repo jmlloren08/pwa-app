@@ -8,3 +8,8 @@ handlers:
     static_dir: dist
   - url: /plugins/*
     static_dir: plugins
+env_variables:
+  CLOUD_SQL_USERNAME: root
+  CLOUD_SQL_PASSWORD:
+  CLOUD_SQL_DATABASE_NAME: db_students
+  CLOUD_SQL_CONNECTION_NAME: pwa-app-project-386102:asia-east1:pwa-app-project

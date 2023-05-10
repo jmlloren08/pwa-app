@@ -14,7 +14,7 @@ Class connString{
         catch(PDOException $e){
             echo "No connection received: " . $e->getMessage(); 
         }
-        echo "Connected!";
+        $error = "Connected!";
     }
     public function close(){
         $this->conn = null;
