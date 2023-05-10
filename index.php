@@ -91,7 +91,7 @@ echo "Soylo!";
             </div>
             <div class="text-center mb-3">
               
-              <p class="m-0"> <?php include('conn.php'); echo $error;?> Don't have an account? <a href="register.php"> Register</a>.</p>
+              <p class="m-0"> <?php include('conn.php'); echo $error;?> Don't have an account? <a href="home.php"> Register</a>.</p>
             </div>
           </form>
 

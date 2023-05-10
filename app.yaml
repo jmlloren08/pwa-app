@@ -8,6 +8,12 @@ handlers:
     static_dir: dist
   - url: /plugins/*
     static_dir: plugins
+  - url: /(.+\.(gif|png|jpg))$
+    static_files: \1
+    upload: .+\.(gif|png|jpg)$
+  - url: .*
+    script: auto
+    
 env_variables:
   CLOUD_SQL_USERNAME: root
   CLOUD_SQL_PASSWORD:
