@@ -20,6 +20,7 @@ echo "Soylo!";
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="sweetalert2.min.css">
 
 </head>
 <body>
@@ -108,6 +109,8 @@ echo "Soylo!";
 <script src="plugins/jquery-validation/additional-methods.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 <script src="build/js/custom/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2.all.min.js"></script>
 
 </body>
 </html>
