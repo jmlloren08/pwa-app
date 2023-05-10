@@ -1,7 +1,7 @@
 <?php
 
 Class connString{
-    private $server = "mysql:unix_socket=/cloudsql/pwa-app-project-386102:asia-east1:pwa-app-project;port=3306;dbname=db_students";
+    private $server = "mysql:host=104.199.204.91;port=3306;dbname=db_students";
     private $username = "root";
     private $password = "";
     private $option = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC);
