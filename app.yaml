@@ -1,3 +1,6 @@
 runtime: php81
 runtime_config:
   document_root: pwa-app
+handlers:
+- url: /plugins
+- url: /dist
