@@ -1,3 +1,17 @@
+
+<?php
+
+    $conn = mysqli_connect('104.199.204.91','root','','db_students');
+
+    if(!$conn){
+        die("Connection failed:" . mysqli_connect_error());
+    }else{
+        echo "Connected successfully";
+    }
+
+    echo "Connected!";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,6 +103,9 @@
               <p class="m-0">Don't have an account? <a href="register.php"> Register</a>.</p>
             </div>
           </form>
+
+          <?php echo isset($error) ? $error : ""; ?>
+
         </div>
       </div>
     </div>
