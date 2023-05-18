@@ -186,9 +186,10 @@ $user = $_SESSION['user'];
                     <?php
                       include_once('../../conn.php');
                       $sql = "SELECT *, TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS age FROM mytable WHERE TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) BETWEEN 0 AND 7";
-                      $result = mysqli_query($conn, $sql);
-                    ?>
-                    <?php while($row = mysqli_fetch_assoc($result)){?>
+                      $query = $conn->prepare($sql);
+                      $query->execute();
+                      $result = $query->setFetchMode(PDO::FETCH_ASSOC);
+                      while ($row = $query->fetch()) {?>
                   <tr>
                     <td><?php echo $row['id']; ?></td>
                     

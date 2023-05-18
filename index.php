@@ -1,6 +1,31 @@
+
 <?php
-echo "Soylo!";
+
+  session_start();
+  if (isset($_SESSION['user'])) {
+    header('Location: home.php');
+    exit;
+  }
+
+  include_once('conn.php');
+  
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
+    $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
+    $query = $conn->prepare($sql);
+    $query->execute();
+    $row = $query->rowCount();
+    $fetch = $query->fetch();
+    if ($row > 0) {
+      $_SESSION['user'] = $fetch['user'];
+      header('Location: home.php');
+    } else {
+      $error = "<script>alert('Invalid Username or Password')</script>";
+    }
+  }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,14 +112,13 @@ echo "Soylo!";
               </div>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary w-100">Login</button>
+              <button type="submit" class="btn btn-primary w-100" onclick="errorLogin">Login</button>
             </div>
             <div class="text-center mb-3">
-              
-              <p class="m-0"> <?php include('conn.php'); echo $error;?> Don't have an account? <a href="home.php"> Register</a>.</p>
+              <p class="m-0">Don't have an account? <a href="register.php"> Register</a>.</p>
             </div>
           </form>
-
+          <?php echo isset($error) ? $error : "" ; ?>
         </div>
       </div>
     </div>
@@ -109,8 +133,8 @@ echo "Soylo!";
 <script src="plugins/jquery-validation/additional-methods.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 <script src="build/js/custom/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
 
 </body>
 </html>

@@ -185,10 +185,11 @@ $user = $_SESSION['user'];
                   <tbody>
                     <?php
                       include_once('../../conn.php');
-                      $sql = $sql = "SELECT *, TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS age FROM mytable";
-                      $result = mysqli_query($conn, $sql);
-                    ?>
-                    <?php while($row = mysqli_fetch_assoc($result)){?>
+                      $sql = "SELECT *, TIMESTAMPDIFF(YEAR, birthdate, CURDATE()) AS age FROM mytable";
+                      $query = $conn->prepare($sql);
+                      $query->execute();
+                      $result = $query->setFetchMode(PDO::FETCH_ASSOC);
+                      while ($row = $query->fetch()) {?>
                   <tr>
                     <td><?php echo $row['id']; ?></td>
                     
