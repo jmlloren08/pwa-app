@@ -1,29 +1,29 @@
 
 <?php
 
-  session_start();
-  if (isset($_SESSION['user'])) {
-    header('Location: home.php');
-    exit;
-  }
+  // session_start();
+  // if (isset($_SESSION['user'])) {
+  //   header('Location: home.php');
+  //   exit;
+  // }
 
-  include_once('conn.php');
+  // include_once('conn.php');
   
-  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $user = $_POST['user'];
-    $pass = $_POST['pass'];
-    $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
-    $query = $conn->prepare($sql);
-    $query->execute();
-    $row = $query->rowCount();
-    $fetch = $query->fetch();
-    if ($row > 0) {
-      $_SESSION['user'] = $fetch['user'];
-      header('Location: home.php');
-    } else {
-      $error = "<script>alert('Invalid Username or Password')</script>";
-    }
-  }
+  // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  //   $user = $_POST['user'];
+  //   $pass = $_POST['pass'];
+  //   $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
+  //   $query = $conn->prepare($sql);
+  //   $query->execute();
+  //   $row = $query->rowCount();
+  //   $fetch = $query->fetch();
+  //   if ($row > 0) {
+  //     $_SESSION['user'] = $fetch['user'];
+  //     header('Location: home.php');
+  //   } else {
+  //     $error = "<script>alert('Invalid Username or Password')</script>";
+  //   }
+  // }
 ?>
 
 <!DOCTYPE html>
@@ -118,7 +118,7 @@
               <p class="m-0">Don't have an account? <a href="register.php"> Register</a>.</p>
             </div>
           </form>
-          <?php echo isset($error) ? $error : "" ; ?>
+          <?php echo "Hello!" ; ?>
         </div>
       </div>
     </div>
