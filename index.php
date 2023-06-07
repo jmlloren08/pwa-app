@@ -1,29 +1,29 @@
 
 <?php
 
-  // session_start();
-  // if (isset($_SESSION['user'])) {
-  //   header('Location: home.php');
-  //   exit;
-  // }
+  session_start();
+  if (isset($_SESSION['user'])) {
+    header('Location: home.php');
+    exit;
+  }
 
-  // include_once('conn.php');
+  include_once('conn.php');
   
-  // if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-  //   $user = $_POST['user'];
-  //   $pass = $_POST['pass'];
-  //   $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
-  //   $query = $conn->prepare($sql);
-  //   $query->execute();
-  //   $row = $query->rowCount();
-  //   $fetch = $query->fetch();
-  //   if ($row > 0) {
-  //     $_SESSION['user'] = $fetch['user'];
-  //     header('Location: home.php');
-  //   } else {
-  //     $error = "<script>alert('Invalid Username or Password')</script>";
-  //   }
-  // }
+  if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
+    $sql = "SELECT * FROM tbluser WHERE user = '$user' AND pass = '$pass'";
+    $query = $conn->prepare($sql);
+    $query->execute();
+    $row = $query->rowCount();
+    $fetch = $query->fetch();
+    if ($row > 0) {
+      $_SESSION['user'] = $fetch['user'];
+      header('Location: home.php');
+    } else {
+      $error = "<script>alert('Invalid Username or Password')</script>";
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +33,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FFFFFF">
   <title>DILG RO IX | Dashboard</title>
+
+  <link rel="manifest" href="./manifest.json">
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -44,14 +46,13 @@
   <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
-  <link rel="manifest" href="manifest.json">
-  <link rel="stylesheet" href="sweetalert2.min.css">
+  <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
 
 </head>
 <body>
 <style>
   body{
-    background: url("https://cdn.wallpapersafari.com/52/67/KL1bW5.jpg") no-repeat center center fixed;
+    background: url("https://th.bing.com/th/id/R.fba1dabe449f7c1af783e89cbd3bae5e?rik=mtxGIFAMU5qV0g&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2f2%2fc%2f9%2f301416.jpg&ehk=JOHmE4xGf3K9cL%2bnoHltqz%2fXUx6fu9t1lFedWevdukY%3d&risl=&pid=ImgRaw&r=0") no-repeat center center fixed;
     background-size: cover;
   }
   .glass{
@@ -118,7 +119,7 @@
               <p class="m-0">Don't have an account? <a href="register.php"> Register</a>.</p>
             </div>
           </form>
-          <?php echo "Hello!" ; ?>
+          <?php echo isset($error) ? $error : "" ; ?>
         </div>
       </div>
     </div>
@@ -133,8 +134,8 @@
 <script src="plugins/jquery-validation/additional-methods.min.js"></script>
 <script src="dist/js/adminlte.min.js"></script>
 <script src="build/js/custom/app.js"></script>
-<script src="sweetalert2.all.min.js"></script>
-<script src="sweetalert2.min.js"></script>
+<!-- <script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script> -->
 
 </body>
 </html>
