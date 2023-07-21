@@ -127,15 +127,7 @@
 
 </div>
 
-<script src="build/js/custom/FormValidation.js"></script>
-<script src="plugins/jquery/jquery.min.js"></script>
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="plugins/jquery-validation/jquery.validate.min.js"></script>
-<script src="plugins/jquery-validation/additional-methods.min.js"></script>
-<script src="dist/js/adminlte.min.js"></script>
-<script src="build/js/custom/app.js"></script>
-<!-- <script src="sweetalert2.all.min.js"></script>
-<script src="sweetalert2.min.js"></script> -->
+<?php include('./sections/scripts.php'); ?>
 
 </body>
 </html>
