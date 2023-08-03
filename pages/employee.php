@@ -86,7 +86,7 @@ $user = $_SESSION['user'];
                         </li>
                         <li class="nav-header">Reports</li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="../pages/payroll.php" class="nav-link">
                                 <i class="nav-icon fas fa-file"></i>
                                 <p>Payroll</p>
                             </a>
@@ -130,17 +130,18 @@ $user = $_SESSION['user'];
                                     <table id="example1" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
-                                                <th>Employee #</th>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Salary</th>
+                                                <th style="width: 115px;">Employee #</th>
+                                                <th style="width: 950px;">Name</th>
+                                                <th style="width: 200px;">Position</th>
+                                                <th style="width: 100px;">Salary</th>
+                                                <th style="width: 150px;">LBP Account #</th>
                                                 <th class="d-flex justify-content-center">Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             include_once('../conn.php');
-                                            $sql = "SELECT *, FORMAT(salary, '##,###.##', 'en-us') AS 'US English' FROM tblemployees";
+                                            $sql = "SELECT *, CONCAT_WS(' ', fname, mname, lname) AS fullname FROM tblemployees";
                                             $query = $conn->prepare($sql);
                                             $query->execute();
                                             $result = $query->setFetchMode(PDO::FETCH_ASSOC);
@@ -151,10 +152,7 @@ $user = $_SESSION['user'];
                                                     </td>
 
                                                     <?php
-                                                    $fname = $row['fname'];
-                                                    $mname = $row['mname'];
-                                                    $lname = $row['mname'];
-                                                    $fullname = $fname . " " . $mname . " " . $lname;
+                                                    $fullname = $row['fullname'];
                                                     ?>
                                                     <td>
                                                         <?php echo $fullname; ?>
@@ -163,13 +161,19 @@ $user = $_SESSION['user'];
                                                         <?php echo $row['position']; ?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row['salary']; ?>
+                                                        <?php echo number_format($row['salary'], 2); ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php echo $row['lbpaccount']; ?>
                                                     </td>
                                                     <td>
                                                         <div class="d-flex justify-content-center">
                                                             <div class="p-2">
                                                                 <div class="btn-group">
-                                                                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables."><svg
+                                                                    <button type="button" class="btn btn-outline-secondary"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        data-bs-custom-class="custom-tooltip"
+                                                                        data-bs-title="This top tooltip is themed via CSS variables."><svg
                                                                             xmlns="http://www.w3.org/2000/svg" width="16"
                                                                             height="16" fill="currentColor"
                                                                             class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -198,10 +202,11 @@ $user = $_SESSION['user'];
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <th>Employee #</th>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Salary</th>
+                                                <th style="width: 115px;">Employee #</th>
+                                                <th style="width: 950px;">Name</th>
+                                                <th style="width: 200px;">Position</th>
+                                                <th style="width: 100px;">Salary</th>
+                                                <th style="width: 150px;">LBP Account #</th>
                                                 <th class="d-flex justify-content-center">Action</th>
                                             </tr>
                                         </tfoot>
@@ -236,7 +241,25 @@ $user = $_SESSION['user'];
     </div>
     <!-- ./wrapper -->
 
-    <?php include('../sections/scripts.php'); ?>
+    <script src="../build/js/custom/getID.js"></script>
+    <script src="../plugins/jquery/jquery.min.js"></script>
+    <script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+    <script src="../plugins/jszip/jszip.min.js"></script>
+    <script src="../plugins/pdfmake/pdfmake.min.js"></script>
+    <script src="../plugins/pdfmake/vfs_fonts.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+    <script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+    <script src="../dist/js/adminlte.min.js"></script>
+    <script src="../build/js/custom/app.js"></script>
+    <script src="../build/js/custom/datatables.js"></script>
+    <script src="../build/js/custom/getID.js"></script>
 
 </body>
 

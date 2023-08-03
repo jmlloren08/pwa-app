@@ -60,7 +60,7 @@ $user = $_SESSION['user'];
             </li>
             <li class="nav-header">Reports</li>
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="./pages/payroll.php" class="nav-link">
                 <i class="nav-icon fas fa-file"></i>
                 <p>Payroll</p>
               </a>
